@@ -1,0 +1,29 @@
+[project]
+name = "tempo-news"
+version = "0.1.0"
+description = "RSS application to fetch news from Tempo and save as markdown files"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "syft-core>=0.2.7",
+    "feedparser>=6.0.0",
+    "lxml_html_clean>=0.1.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "python-dateutil>=2.8.0",
+    "pydantic>=2.5.0",
+    "markdownify>=0.11.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0.0",
+    "newspaper4k>=0.9.3.1",
+]
+
+[project.scripts]
+tempo-news = "tempo_news.cli:cli"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+include = ["tempo_news*"]
